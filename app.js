@@ -35,6 +35,7 @@ function renderStories(filter='all'){
   }
   document.querySelector('#archiveCount').textContent = `${filtered.length} câu chuyện đang hiển thị`;
   updateStats();
+  renderPhotoGallery();
 }
 
 function openStory(id){
@@ -75,6 +76,18 @@ function updateMarkers(filter='all'){
   });
 }
 
+function renderPhotoGallery(){
+  const host=document.querySelector('#photoGallery');
+  if(!host)return;
+  const withImages=stories.filter(s=>imageForStory(s));
+  if(!withImages.length){
+    host.innerHTML='<div class="photo-empty">Ảnh sẽ xuất hiện tại đây khi cộng đồng gửi và câu chuyện được duyệt.</div>';
+    return;
+  }
+  host.innerHTML=withImages.slice().reverse().map(s=>`<button class="photo-tile" type="button" data-photo-id="${escapeHtml(s.id)}"><img src="${escapeHtml(imageForStory(s))}" alt="${escapeHtml(s.place)}"><span><strong>${escapeHtml(s.title)}</strong><small>${escapeHtml(s.place)}</small></span></button>`).join('');
+  host.querySelectorAll('[data-photo-id]').forEach(btn=>btn.addEventListener('click',()=>openStory(btn.dataset.photoId)));
+}
+
 function renderCommunityTimeline(){
   const host=document.querySelector('#communityTimeline');
   if(!host)return;
@@ -100,6 +113,7 @@ function loadApprovedStories(){
         renderStories(active);
         updateMarkers(active);
         renderCommunityTimeline();
+        renderPhotoGallery();
       }
     }finally{
       delete window[callbackName];

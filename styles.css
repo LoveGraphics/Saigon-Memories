@@ -209,3 +209,12 @@ img{height:auto;}
 .year,.story-quote,figcaption,.hero-caption span:first-child{font-style:normal;}
 @media(max-width:900px){.hero h1,.map-card h2,.section-heading h2,.contribute h2,.story-panel h2,#storyForm h2{line-height:1.08;letter-spacing:normal;} .intro-title{line-height:1.12;letter-spacing:.02em;}}
 @media(max-width:600px){.hero h1{line-height:1.08;} .map-card h2,.section-heading h2,.contribute h2,.story-panel h2,#storyForm h2{line-height:1.08;} .intro-grid h2{line-height:1.12;} .intro-title{line-height:1.12;letter-spacing:.02em;}}
+
+.photo-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.photo-tile{display:flex;flex-direction:column;text-align:left;padding:0;border:1px solid var(--line,#d8d0c4);background:transparent;color:inherit;cursor:pointer;overflow:hidden;border-radius:4px}
+.photo-tile img{display:block;width:100%;height:240px;object-fit:cover;max-width:100%}
+.photo-tile span{display:flex;flex-direction:column;gap:5px;padding:14px}
+.photo-tile small{opacity:.65}
+.photo-empty{padding:30px 0;color:var(--muted,#777)}
+@media (max-width:760px){.photo-gallery{grid-template-columns:1fr 1fr;gap:12px}.photo-tile img{height:170px}.photo-tile span{padding:10px}}
+@media (max-width:430px){.photo-gallery{grid-template-columns:1fr}.photo-tile img{height:auto;max-height:300px}}
