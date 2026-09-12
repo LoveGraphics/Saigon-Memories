@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sài Gòn Ký Ức — bản đồ lưu giữ những câu chuyện, ký ức và hình ảnh của người Sài Gòn qua nhiều thế hệ.">
+  <title>Sài Gòn Ký Ức — Bản đồ ký ức</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="intro" class="intro" aria-hidden="true">
+    <div class="intro-wash"></div>
+    <div class="intro-route" aria-hidden="true"><span></span><i></i><b></b></div>
+    <div class="intro-image" aria-hidden="true">
+      <img src="assets/images/saigon-hero.svg" alt="">
+    </div>
+    <div class="intro-location intro-location-a">BẾN THÀNH</div>
+    <div class="intro-location intro-location-b">CHỢ LỚN</div>
+    <div class="intro-title">SÀI GÒN<br><em>KÝ ỨC</em></div>
+    <div class="intro-subtitle">NHỮNG ĐIỀU CÒN LẠI Ở MỘT NƠI TA TỪNG ĐI QUA</div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Sài Gòn Ký Ức">
+      <img class="brand-logo" src="assets/images/saigon-logo.png" alt="SG"><span>SÀI GÒN<br><em>KÝ ỨC</em></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">☰</button>
+    <nav id="nav">
+      <a href="#map-section">BẢN ĐỒ</a>
+      <a href="#timeline">DÒNG THỜI GIAN</a>
+      <a href="#archive">KHO KÝ ỨC</a>
+      <a href="#photos">ẢNH SÀI GÒN</a>
+    </nav>
+    <button class="header-cta" data-open-submit>GỬI CÂU CHUYỆN</button>
+  </header>
+
+  <main id="top">
+    <section class="hero reveal">
+      <div class="hero-copy">
+        <p class="eyebrow">MỘT THÀNH PHỐ · NHIỀU THẾ HỆ</p>
+        <h1>Mỗi góc phố,<br><em>một câu chuyện.</em></h1>
+        <p class="hero-text">Thu thập những câu chuyện, ký ức và hình ảnh của người dân Sài Gòn qua nhiều thế hệ — rồi đặt chúng trở lại nơi chúng từng thuộc về.</p>
+        <a class="primary-btn" href="#map-section">KHÁM PHÁ BẢN ĐỒ <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Minh họa Sài Gòn">
+        <img src="assets/images/saigon-hero.svg" alt="Minh họa đường phố Sài Gòn">
+        <div class="hero-caption"><span>01</span><span>SÀI GÒN, TRƯỚC VÀ NAY</span></div>
+      </div>
+    </section>
+
+    <section class="intro-section reveal">
+      <div class="section-no">01 — GIỚI THIỆU</div>
+      <div class="intro-grid">
+        <h2>Một thành phố được nhớ bằng những điều rất nhỏ.</h2>
+        <div><p>Tiếng rao buổi sáng. Một quán cà phê cũ. Con đường đi học. Một trận mưa bất chợt. Những điều tưởng như bình thường lại là cách mỗi thế hệ nhớ về Sài Gòn.</p><p class="muted">Dự án này biến những ký ức ấy thành một kho lưu trữ sống — có địa điểm, có thời gian và có con người.</p></div>
+      </div>
+    </section>
+
+    <section id="map-section" class="map-section reveal">
+      <div id="map"></div>
+      <div id="mapFallback" class="map-fallback" hidden>
+        <strong>Bản đồ tương tác chưa tải được</strong>
+        <span>Trình duyệt vẫn có Internet nhưng có thể đang chặn một CDN bản đồ. Website sẽ thử các nguồn dự phòng tự động.</span>
+        <button type="button" id="mapRetry" class="map-retry">THỬ TẢI LẠI</button>
+        <a class="map-open" href="https://www.openstreetmap.org/?mlat=10.7769&amp;mlon=106.7009#map=13/10.7769/106.7009" target="_blank" rel="noopener">MỞ BẢN ĐỒ TRỰC TUYẾN ↗</a>
+      </div>
+      <div class="map-card">
+        <p class="eyebrow">02 — BẢN ĐỒ KÝ ỨC</p>
+        <h2>Đi tìm những<br><em>câu chuyện bị<br>bỏ lại.</em></h2>
+        <p>Chọn một dấu chấm trên bản đồ để nghe Sài Gòn được kể lại từ một góc nhìn khác.</p>
+        <div class="stats"><div><b id="memoryCount">0</b><span>KÝ ỨC</span></div><div><b id="placeCount">0</b><span>ĐỊA ĐIỂM</span></div><div><b id="yearCount">0</b><span>THẬP NIÊN</span></div></div>
+        <div class="decades" id="decades">
+          <button class="active" data-decade="all">TẤT CẢ</button><button data-decade="1970">1970S</button><button data-decade="1990">1990S</button><button data-decade="2000">2000S</button><button data-decade="now">NAY</button>
+        </div>
+        <div class="map-hint">● Nhấn vào từng điểm để mở câu chuyện</div>
+      </div>
+      <div class="map-legend">Bản đồ sử dụng dữ liệu nền OpenStreetMap · Cần Internet để tải nền bản đồ</div>
+    </section>
+
+    <section id="timeline" class="timeline-section reveal">
+      <div class="section-no">03 — DÒNG THỜI GIAN</div>
+      <div class="section-heading"><h2>Sài Gòn qua <em>những năm tháng.</em></h2><p>Dòng thời gian sẽ được hình thành từ những ký ức được cộng đồng gửi và duyệt.</p></div>
+      <div id="communityTimeline" class="community-timeline" aria-live="polite"></div>
+    </section>
+
+    <section id="archive" class="archive-section reveal">
+      <div class="section-no">04 — KHO KÝ ỨC</div>
+      <div class="section-heading"><h2>Những câu chuyện <em>được ghim lại.</em></h2><p id="archiveCount">0 câu chuyện đang hiển thị</p></div>
+      <div class="story-grid" id="storyGrid"></div>
+    </section>
+
+    <section id="photos" class="photos-section reveal">
+      <div class="section-no">05 — ẢNH SÀI GÒN</div>
+      <div class="photo-empty">Ảnh sẽ xuất hiện tại đây khi cộng đồng gửi và câu chuyện được duyệt.</div>
+    </section>
+
+    <section class="contribute reveal">
+      <div><p class="eyebrow">06 — GÓP MỘT MẢNH GHÉP</p><h2>Bạn nhớ Sài Gòn<br><em>như thế nào?</em></h2></div>
+      <div><p>Một câu chuyện ngắn, một tấm ảnh cũ, hay chỉ là tên một con hẻm. Mọi ký ức đều có thể trở thành một phần của bản đồ này.</p><button class="primary-btn" data-open-submit>GỬI CÂU CHUYỆN <span>↗</span></button></div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><img class="brand-logo" src="assets/images/saigon-logo.png" alt="SG"><span>SÀI GÒN<br><em>KÝ ỨC</em></span></div><p>Một kho lưu trữ cộng đồng về ký ức đô thị.</p><span>© 2026 Sài Gòn Ký Ức</span></footer>
+
+  <aside class="story-panel" id="storyPanel" aria-hidden="true"><button class="close" id="closePanel" aria-label="Đóng">×</button><div id="storyPanelContent"></div></aside>
+
+  <dialog id="submitDialog"><form method="dialog" id="storyForm" novalidate><button class="dialog-close" type="button" id="closeSubmitDialog" aria-label="Đóng">×</button><p class="eyebrow">GÓP MỘT MẢNH GHÉP</p><h2>Gửi một câu chuyện<br><em>về Sài Gòn.</em></h2><label>Tên hiển thị<input name="name" required placeholder="Tên hoặc biệt danh"></label><label>Địa điểm<input name="place" required placeholder="Ví dụ: Chợ Bến Thành"></label><label>Khoảng thời gian<select name="decade"><option>1970s</option><option>1980s</option><option>1990s</option><option>2000s</option><option>Nay</option></select></label><label>Câu chuyện<textarea name="story" rows="5" required placeholder="Bạn nhớ điều gì nhất?"></textarea></label><label>Ảnh kỷ niệm <span class="optional">(không bắt buộc)</span><input id="storyImage" name="image" type="file" accept="image/*"><img id="imagePreview" class="image-preview" alt="Xem trước ảnh" hidden></label><button class="primary-btn" type="submit">GỬI KÝ ỨC <span>↗</span></button><p class="form-note" id="formNote"></p></form></dialog>
+
+  <script src="config.js"></script><script src="app.js"></script>
+</body>
+</html>
