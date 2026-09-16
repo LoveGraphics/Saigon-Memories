@@ -90,8 +90,8 @@
     </section>
 
     <section id="photos" class="photos-section reveal">
-      <div class="section-no">05 — ẢNH SÀI GÒN</div>
-      <div id="photoGallery" class="photo-gallery" aria-live="polite"><div class="photo-empty">Ảnh sẽ xuất hiện tại đây khi cộng đồng gửi và câu chuyện được duyệt.</div></div>
+      <div class="section-no">05 — ẢNH & VIDEO SÀI GÒN</div>
+      <div id="photoGallery" class="photo-gallery" aria-live="polite"><div class="photo-empty">Ảnh và video sẽ xuất hiện tại đây khi cộng đồng gửi và câu chuyện được duyệt.</div></div>
     </section>
 
     <section class="contribute reveal">
@@ -104,8 +104,8 @@
 
   <aside class="story-panel" id="storyPanel" aria-hidden="true"><button class="close" id="closePanel" aria-label="Đóng">×</button><div id="storyPanelContent"></div></aside>
 
-  <dialog id="submitDialog"><form method="dialog" id="storyForm" novalidate><button class="dialog-close" type="button" id="closeSubmitDialog" aria-label="Đóng">×</button><p class="eyebrow">GÓP MỘT MẢNH GHÉP</p><h2>Gửi một câu chuyện<br><em>về Sài Gòn.</em></h2><label>Tên hiển thị<input name="name" required placeholder="Tên hoặc biệt danh"></label><label>Địa điểm<input name="place" required placeholder="Ví dụ: Chợ Bến Thành"></label><label>Khoảng thời gian<select name="decade"><option>1970s</option><option>1980s</option><option>1990s</option><option>2000s</option><option>Nay</option></select></label><label>Câu chuyện<textarea name="story" rows="5" required placeholder="Bạn nhớ điều gì nhất?"></textarea></label><label>Ảnh kỷ niệm <span class="optional">(không bắt buộc)</span><input id="storyImage" name="image" type="file" accept="image/*"><img id="imagePreview" class="image-preview" alt="Xem trước ảnh" hidden></label><button class="primary-btn" type="submit">GỬI KÝ ỨC <span>↗</span></button><p class="form-note" id="formNote"></p></form></dialog>
+  <dialog id="submitDialog"><form method="dialog" id="storyForm" novalidate><button class="dialog-close" type="button" id="closeSubmitDialog" aria-label="Đóng">×</button><p class="eyebrow">GÓP MỘT MẢNH GHÉP</p><h2>Gửi một câu chuyện<br><em>về Sài Gòn.</em></h2><label>Tên hiển thị<input name="name" required placeholder="Tên hoặc biệt danh"></label><label>Địa điểm<input name="place" required placeholder="Ví dụ: Chợ Bến Thành"></label><label>Khoảng thời gian<select name="decade"><option>1970s</option><option>1980s</option><option>1990s</option><option>2000s</option><option>Nay</option></select></label><label>Câu chuyện<textarea name="story" rows="5" required placeholder="Bạn nhớ điều gì nhất?"></textarea></label><label>Ảnh kỷ niệm <span class="optional">(có thể chọn nhiều ảnh)</span><input id="storyImage" name="image" type="file" accept="image/*" multiple><div id="imagePreviewGrid" class="upload-preview-grid" aria-live="polite"></div></label><label>Video kỷ niệm <span class="optional">(không bắt buộc, tối đa 200 MB)</span><input id="storyVideo" name="video" type="file" accept="video/*"><video id="videoPreview" class="video-preview" controls playsinline preload="metadata" hidden></video><div id="uploadProgressWrap" class="upload-progress" hidden><div class="upload-progress-head"><span id="uploadProgressText">0%</span></div><div class="upload-progress-track"><div id="uploadProgressBar" class="upload-progress-bar"></div></div></div></label><p class="form-hint">Bạn có thể chọn tối đa 6 ảnh và 1 video (tối đa 200 MB). Media sẽ được tải trực tiếp lên kho lưu trữ.</p><button class="primary-btn" type="submit">GỬI KÝ ỨC <span>↗</span></button><p class="form-note" id="formNote"></p></form></dialog>
 
-  <script src="config.js"></script><script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="config.js"></script><script src="app.js"></script>
 </body>
 </html>

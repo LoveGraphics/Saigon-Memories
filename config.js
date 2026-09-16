@@ -1,4 +1,7 @@
-// Google Apps Script Web App URL
+// Supabase configuration
+// Tạo project Supabase rồi điền Project URL + anon public key.
 window.SAIGON_MEMORY_CONFIG = {
-  GAS_ENDPOINT: 'https://script.google.com/macros/s/AKfycbwm0xmtbXV2uKgdy4ZdUBNb4ohC6fCQ6ZnpY3k2hQN6S1z-CKeCEUY0o5SeuJt6TFrQWw/exec'
+  SUPABASE_URL: 'https://bjakugmrjvsapreolzjb.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_4NBBCXIuz3cHM7tMWASdKw_FJvvp91x',
+  MEDIA_BUCKET: 'media'
 };
